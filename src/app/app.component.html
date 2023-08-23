@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A mesmerizing Todo App with captivating design and smooth animations.">
+  <title>Todo App</title>
+  <!-- Add any additional meta tags for SEO optimization here -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Add any custom styles or fonts here -->
+  <style>
+    /* Add any additional custom styles here */
+  </style>
+</head>
+<body class="bg-gray-100">
+  <header class="bg-purple-400 py-4">
+    <div class="container mx-auto text-center">
+      <h1 class="text-white text-3xl font-bold">Todo App</h1>
+    </div>
+  </header>
+
+  <nav class="py-4 bg-purple-600">
+    <ul class="flex justify-center space-x-4">
+      <li class="cursor-pointer hover:text-white transition-colors" id="allTaskBtn">View All Tasks</li>
+      <li class="cursor-pointer hover:text-white transition-colors" id="completedTaskBtn">Completed</li>
+    </ul>
+  </nav>
+
+  <div class="container mx-auto mt-8">
+    <div class="flex justify-center space-x-4">
+      <label for="taskTitle" class="text-gray-700">Add New Task:</label>
+      <input class="border rounded-md px-3" type="text" id="taskTitle" placeholder="Enter task title here...">
+      <button class="bg-purple-400 text-white rounded-md px-4 py-2 hover:bg-purple-500 transition-colors" id="addTaskButton">Add Task</button>
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-blue-900 text-center text-xl font-bold mb-4">All Tasks</h2>
+      <table class="table-auto w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-blue-200">
+            <th class="px-4 py-2">Name</th>
+            <th class="px-4 py-2">Status</th>
+            <th class="px-4 py-2">Mark Completed</th>
+            <th class="px-4 py-2">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="taskList">
+          <!-- This is where tasks will be dynamically rendered -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-blue-900 text-center text-xl font-bold mb-4">All Completed Tasks</h2>
+      <table class="table-auto w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-blue-200">
+            <th class="px-4 py-2">Name</th>
+            <th class="px-4 py-2">Status</th>
+            <th class="px-4 py-2">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="completedTaskList">
+          <!-- This is where completed tasks will be dynamically rendered -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="bg-purple-400 py-4 mt-8">
+    <p class="text-center text-white">&copy; 2023 Todo App. All rights reserved.</p>
+  </footer>
+</body>
+</html>
