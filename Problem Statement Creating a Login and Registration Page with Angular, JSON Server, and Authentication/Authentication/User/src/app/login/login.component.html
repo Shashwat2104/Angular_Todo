@@ -1,0 +1,30 @@
+<div class="w-auto">
+  <h1 class="flex justify-center font-bold text-2xl underline">Login</h1>
+  <form
+    [formGroup]="forminstance"
+    (ngSubmit)="submitForm()"
+    class="flex flex-col shadow-xl my-4 mx-auto py-5 px-5 w-2/6"
+  >
+    <label for="email">Email:</label>
+    <input
+      class="bg-gray-100 my-2 py-2"
+      type="email"
+      formControlName="email"
+      required
+    />
+
+    <label for="password">Password</label>
+    <input
+      class="bg-gray-100 my-2 py-2"
+      type="password"
+      formControlName="password"
+      required
+    />
+
+    <input
+      class="bg-green-700 text-white py-2 rounded"
+      type="submit"
+      value="Login"
+    />
+  </form>
+</div>

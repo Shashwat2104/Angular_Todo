@@ -1,0 +1,38 @@
+<section>
+  <div
+    class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 font-sans"
+  >
+    <div
+      *ngFor="let ele of data"
+      class="border 1px solid black rounded shadow mt-5 px-3 py-3 relative overflow-hidden bg-blue-50 animate__animated animate__zoomInDown"
+    >
+      <img
+        class="w-full h-auto hover:scale-105 transform-center transition-all cursor-pointer"
+        [src]="ele.strCategoryThumb"
+        alt="{{ ele.strCategory }}"
+      />
+      <h1 class="text-2xl">{{ ele.strCategory }}</h1>
+      <p>{{ ele.strCategoryDescription }}</p>
+      <h3>Price : {{ ele.price }}</h3>
+      <button
+        (click)="decrement(ele)"
+        class="bg-slate-700 text-white px-2 py-1 rounded-md"
+      >
+        -
+      </button>
+      <span class="mx-4"> {{ ele.quantity }}</span>
+      <button
+        class="bg-slate-700 text-white px-2 py-1 rounded-md"
+        (click)="increment(ele)"
+      >
+        +
+      </button>
+      <button
+        class="bg-slate-700 text-white ml-2 px-2 py-1 rounded-md"
+        (click)="deleteProduct(ele.idCategory)"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+</section>

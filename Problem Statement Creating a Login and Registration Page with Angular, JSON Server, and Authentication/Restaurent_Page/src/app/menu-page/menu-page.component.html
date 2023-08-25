@@ -1,0 +1,44 @@
+<section>
+  <div class="flex items-center justify-center pt-2">
+    <select
+      class="text-white bg-blue-600 rounded px-2 py-1"
+      [(ngModel)]="selectedFood"
+      (ngModelChange)="filterItem(); logData()"
+    >
+      <option value="alldata">ALL</option>
+      <option value="Beef">Beef</option>
+      <option value="Chicken">Chicken</option>
+      <option value="Dessert">Dessert</option>
+      <option value="Pasta">pasta</option>
+    </select>
+  </div>
+  <div
+    class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 font-sans"
+  >
+    <div
+      *ngFor="let ele of filtereditems"
+      [attr.data-food]="ele.foodType"
+      class="border 1px solid black rounded shadow mt-5 px-3 py-3 relative overflow-hidden bg-blue-50 animate__animated animate__zoomInDown"
+    >
+      <img
+        class="w-full h-auto hover:scale-105 transform-center transition-all cursor-pointer"
+        [src]="ele.strCategoryThumb"
+        alt="{{ ele.strCategory }}"
+      />
+      <h1 class="text-2xl">{{ ele.strCategory }}</h1>
+      <p>{{ ele.strCategoryDescription }}</p>
+      <button
+        class="bg-blue-600 py-2 px-4 mt-4 rounded cursor-pointer text-white"
+        (click)="AddToCart(ele)"
+      >
+        Add To Cart
+      </button>
+      <button
+        (click)="redirectToCart()"
+        class="ml-5 bg-blue-600 py-2 px-4 mt-4 rounded cursor-pointer text-white"
+      >
+        Go To Cart
+      </button>
+    </div>
+  </div>
+</section>
